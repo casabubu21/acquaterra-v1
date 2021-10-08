@@ -14,4 +14,13 @@ basic.forever(function () {
     } else {
         basic.showIcon(IconNames.Sad)
     }
+    basic.pause(5000)
+    basic.showLeds(`
+        . . . . .
+        . . . . .
+        . . . . .
+        . . . . .
+        . . . . .
+        `)
+    basic.pause(60000)
 })
