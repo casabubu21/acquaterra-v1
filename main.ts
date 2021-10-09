@@ -24,4 +24,5 @@ basic.forever(function () {
         . . . . .
         . . . . .
         `)
+    basic.pause(60000)
 })
