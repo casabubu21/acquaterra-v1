@@ -1,8 +1,5 @@
-let umidità = 0
-radio.setGroup(33)
-basic.forever(function () {
+input.onButtonPressed(Button.A, function () {
     umidità = pins.analogReadPin(AnalogPin.P1)
-    radio.sendNumber(umidità)
     if (umidità > 1005) {
         basic.showLeds(`
             . # # # .
@@ -16,7 +13,7 @@ basic.forever(function () {
     } else {
         basic.showIcon(IconNames.Sad)
     }
-    basic.pause(2000)
+    basic.pause(5000)
     basic.showLeds(`
         . . . . .
         . . . . .
@@ -24,5 +21,11 @@ basic.forever(function () {
         . . . . .
         . . . . .
         `)
-    basic.pause(60000)
+})
+let umidità = 0
+radio.setGroup(33)
+basic.forever(function () {
+    umidità = pins.analogReadPin(AnalogPin.P1)
+    radio.sendNumber(umidità)
+    basic.pause(30000)
 })
